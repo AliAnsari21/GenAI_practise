@@ -12,3 +12,5 @@ streamlit
 langchain_groq
 langchain_community
 langchain_text_splitters
+sentence-transformers
+torch
