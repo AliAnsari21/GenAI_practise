@@ -1,0 +1,14 @@
+langchain
+langchain-core
+langchain-openai
+openai
+langchain-huggingface
+transformers
+huggingface-hub
+python-dotenv
+numpy
+scikit-learn
+streamlit
+langchain_groq
+langchain_community
+langchain_text_splitters
