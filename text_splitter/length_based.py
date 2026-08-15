@@ -1,0 +1,47 @@
+from langchain_text_splitters import CharacterTextSplitter
+
+text = """Artificial Intelligence (AI) is one of the most important and rapidly developing areas of computer science. It focuses on creating machines and software systems that can perform tasks that normally require human intelligence. These tasks include understanding natural language, recognizing images, making decisions, solving problems, learning from data, and predicting future outcomes. Artificial Intelligence has become an important part of modern technology and is being used in healthcare, finance, education, transportation, entertainment, manufacturing, agriculture, and many other industries.
+
+Machine Learning is a major branch of Artificial Intelligence. Instead of explicitly programming a computer with rules for every possible situation, Machine Learning allows computers to learn patterns from data. A machine learning model is trained using historical data and then uses the learned patterns to make predictions or decisions on new data. There are several types of machine learning, including supervised learning, unsupervised learning, and reinforcement learning.
+
+Supervised learning is used when the training dataset contains both input features and the correct output labels. The model learns the relationship between the input and output and attempts to predict the correct output for new examples. Common supervised learning algorithms include Linear Regression, Logistic Regression, Decision Trees, Random Forest, Support Vector Machines, K-Nearest Neighbors, Gradient Boosting, and Neural Networks. Supervised learning can be used for both classification and regression problems.
+
+Classification is a machine learning task where the goal is to predict a category or class. For example, an email classification system can determine whether a message is spam or not spam. A medical model can classify a patient into different disease categories based on medical information. A financial system can classify transactions as legitimate or fraudulent. Classification models are evaluated using metrics such as accuracy, precision, recall, F1-score, and the confusion matrix.
+
+Regression is another supervised learning task where the goal is to predict a continuous numerical value. For example, a housing price prediction system can estimate the price of a house based on its location, size, number of bedrooms, age, and other characteristics. Other examples include predicting sales, temperature, stock prices, energy consumption, and customer spending. Regression models can be evaluated using metrics such as Mean Absolute Error, Mean Squared Error, Root Mean Squared Error, and R-squared.
+
+Unsupervised learning is used when the dataset does not contain predefined output labels. The algorithm attempts to discover hidden structures and patterns within the data. Clustering is one of the most common unsupervised learning techniques. K-Means clustering, Hierarchical clustering, and DBSCAN can be used to group similar data points together. For example, a company can use clustering to divide customers into different groups based on purchasing behavior, age, income, and interests.
+
+Deep Learning is a specialized area of Machine Learning that uses artificial neural networks with multiple layers. Deep learning models are capable of learning complex patterns from large datasets. They have achieved excellent results in image recognition, speech recognition, natural language processing, recommendation systems, and autonomous vehicles. Convolutional Neural Networks are commonly used for image-related tasks, while Recurrent Neural Networks and Transformer architectures are widely used for sequential and language-related tasks.
+
+Natural Language Processing, commonly known as NLP, is a field of Artificial Intelligence that focuses on enabling computers to understand and process human language. NLP applications include text classification, sentiment analysis, machine translation, question answering, speech recognition, summarization, and chatbots. Modern NLP systems use deep learning and transformer-based architectures to understand the meaning and context of text.
+
+Large Language Models have significantly changed the field of NLP. These models are trained on large collections of text and can generate human-like responses, summarize documents, answer questions, write code, translate languages, and perform many other language-related tasks. Generative AI systems use these models to create new content based on user instructions. Applications of Generative AI include virtual assistants, content generation, software development, education, customer support, and document analysis.
+
+LangChain is a framework that can be used to develop applications powered by language models. It provides components for working with prompts, models, output parsers, document loaders, text splitters, retrievers, vector databases, and chains. One common workflow is to load a document, divide it into smaller chunks, convert those chunks into embeddings, store them in a vector database, retrieve relevant information, and provide that information to a language model.
+
+Text splitting is an important step when working with large documents. Large documents may contain more information than a language model can process in a single request. A text splitter divides the document into smaller pieces called chunks. Chunk size determines the approximate amount of text contained in each chunk, while chunk overlap allows neighboring chunks to share some information. Overlap can help preserve context when important information occurs near the boundary between two chunks.
+
+Retrieval-Augmented Generation, or RAG, is a technique that combines information retrieval with language generation. In a RAG system, documents are first processed and stored in a searchable database. When a user asks a question, the system searches for relevant pieces of information and provides them to the language model as context. The model then generates an answer using the retrieved information. RAG is useful for question answering over private documents, company knowledge bases, research papers, manuals, and other collections of information.
+
+Vector databases are commonly used in RAG systems. Text chunks are converted into numerical representations called embeddings. Embeddings represent the semantic meaning of the text as vectors. Similar pieces of text tend to have similar vector representations. When a user submits a query, the query is also converted into an embedding, and the vector database searches for documents that are semantically similar to the query.
+
+Data preprocessing is another important part of a machine learning project. Real-world datasets often contain missing values, duplicate records, incorrect data types, inconsistent formats, and outliers. Before training a model, data scientists usually inspect the dataset, clean the data, perform exploratory data analysis, and transform the features into a suitable format. Categorical variables may need to be converted into numerical representations using techniques such as label encoding or one-hot encoding.
+
+Feature engineering involves creating or transforming variables to improve the performance of a machine learning model. For example, a date column can be converted into year, month, day, or weekday features. In a housing dataset, the price per square foot can be calculated from total price and area. Good feature engineering can help a model identify important relationships in the data and can sometimes improve performance more than simply changing the machine learning algorithm.
+
+Model training usually involves dividing the available dataset into training and testing sets. The training set is used to learn the patterns, while the testing set is used to evaluate how well the model performs on unseen data. Sometimes a validation set or cross-validation technique is also used to select hyperparameters and compare different models. It is important to avoid data leakage, where information from the test set accidentally influences the training process.
+
+After a model has been trained and evaluated, it can be deployed as an application. Python frameworks such as Flask, FastAPI, and Streamlit can be used to create interfaces for machine learning models. A user can enter information through a web interface, and the application can process the input, pass it to the trained model, and display the prediction. Deployment allows machine learning solutions to be used by people who may not have programming knowledge.
+
+The future of Artificial Intelligence will likely involve increasingly capable models, improved reasoning systems, multimodal applications, autonomous agents, and more personalized AI assistants. However, responsible development is also important. AI systems should be designed with attention to privacy, security, fairness, transparency, reliability, and human oversight. Understanding both the technical capabilities and limitations of AI is essential for building useful and trustworthy applications."""
+
+splitter = CharacterTextSplitter(
+    separator="\n",
+    chunk_size=100,
+    chunk_overlap=20
+)
+
+chunks = splitter.split_text(text)
+
+print(chunks)
