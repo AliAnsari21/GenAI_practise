@@ -16,3 +16,6 @@ sentence-transformers
 torch
 pandas
 langchain-experimental
+chromadb
+tiktoken
+pypdf
