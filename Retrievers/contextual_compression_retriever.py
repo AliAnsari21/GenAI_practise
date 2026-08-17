@@ -53,8 +53,7 @@ compressor=LLMChainExtractor.from_llm(llm)
 
 compression_retriever=ContextualCompressionRetriever(
     base_retriever=base_retriever,
-    base_compressor=compressor,
-)
+    base_compressor=compressor,)
 
 
 query="what is langchain?"
