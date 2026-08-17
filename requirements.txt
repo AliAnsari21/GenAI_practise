@@ -19,3 +19,4 @@ langchain-experimental
 chromadb
 tiktoken
 pypdf
+duckduckgo-search
