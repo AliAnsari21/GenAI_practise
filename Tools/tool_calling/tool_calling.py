@@ -18,6 +18,7 @@ print(multiply.invoke({"a": 3, "b": 5}))
 llm = ChatGroq(model="openai/gpt-oss-20b", temperature=0)
 llm_with_tool = llm.bind_tools([multiply])
 
+
 # tool calling
 query = HumanMessage('can you multiply 3 with 10')
 messages = [query]
