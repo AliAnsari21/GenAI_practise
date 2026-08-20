@@ -49,4 +49,4 @@ for tool_call in ai_message.tool_calls:
         tool_message2=convert.invoke(tool_call)
         messages.append(tool_message2)
 
-llm_with_tool.invoke(messages).content
+print(llm_with_tool.invoke(messages).content)
